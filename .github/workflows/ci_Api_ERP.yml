@@ -34,7 +34,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Step 3 Execute collection
-        run: newman run ./AutomacaoPartners.postman_collection.json -e ./Partners.postman_environment.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./docs/index.html
+        run: newman run ./AutomacaoScheduling.postman_collection.json -e ./Scheduling.postman_environment.json --reporters cli, -r htmlextra --reporter-htmlextra-export ./docs/index.html
 
       # Runs a set of commands using the runners shell
       - name: Step 4 Archive Production artifacts
@@ -50,6 +50,6 @@ jobs:
         if: ${{ always() }}
         with: 
             name: report-api-user-ci
-            path: ./reports/report-api-user-ci.html
+            path: ./docs
             # armazena o relatório html por 30 dias
             retention-days: 30
